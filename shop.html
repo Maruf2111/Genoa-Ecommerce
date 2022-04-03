@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assests/all.min.css">
+    <link rel="stylesheet" href="assests/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>shop-page</title>
+
+    <style>
+.shop-header-section{
+    background-color: #ffff;
+    color: gray;
+}
+.shop-header-section ul li a{
+    color: gray;
+}
+.header-icon i{
+    color: gray;
+}
+.product-banner-section{
+    background-image: url(img/shop-banner-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    position: relative;
+}
+.product-banner-section::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(90deg, rgba(138, 88, 202, 0.85) 0%, rgba(130, 83, 249, 0.85) 100%, #6929b900 100%);
+    opacity: .9;
+    z-index: -1;
+}
+.product-banner-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 180px 0;
+}
+.product-banner-item h1 {
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #fff;
+}
+.product-section {
+    background: #F6F5FB;
+    padding: 70px 0;
+}
+.product-section .container {
+    background: #ffff;
+    border-radius: 10px;
+    padding: 0 30px;
+    padding-bottom: 30px;
+}
+.product-header-item h2 {
+    font-size: 30px;
+    color: black;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding-bottom: 15px;
+}
+.product-header-item p {
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+.product-header-btn {
+    text-align: right;
+}
+button.product-header-btn {
+    padding: 12px 30px;
+    border: none;
+    outline: none;
+    background: #E7EFF2;
+    border-radius: 30px;
+    color: gray;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-top: 45px;
+    position: relative;
+    padding-right: 90px;
+}
+button.product-header-btn i {
+    padding-left: 50px;
+    padding-right: 5px;
+    transition: .3s;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+button.product-header-btn:hover i {
+    right: 15px;
+}
+.product-header {
+    padding-top: 50px;
+}
+.product-image img {
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.product-item {
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #e6e8ed;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.product-image {
+    position: relative;
+}
+span.sale {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 14px;
+    background: #00A3FF;
+    border-radius: 20px;
+    cursor: pointer;
+}
+span.delete-price {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    color: #ffff;
+    font-size: 14px;
+    background: #E5423F;
+    border-radius: 20px;
+    opacity: .5;
+    cursor: pointer;
+    transition: .3s;
+}
+span.delete-price:hover {
+    opacity: 1;
+}
+.product-content h4 {
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: #30353D;
+}
+p.product-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #8AB07B;
+}
+button.product-btn {
+    padding: 8px 30px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: #FF7542;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px #FBDCD3;
+    opacity: .8;
+    transition: .3s;
+}
+button.product-btn:hover {
+    opacity: 1;
+    box-shadow: none;
+}
+.product-content {
+    padding: 30px;
+    transition: .3s;
+}
+.product-content:hover {
+    background: #F8FAFF;
+}
+
+    </style>
+
+</head>
+<body>
+    
+<!-- saidbar section starts -->
+
+<div class="saidbar">
+    <div class="saidbar-header">
+        <a href="index.html"><img src="img/footer-log.png"></a>
+        <i class="fa fa-times" id="saidbar-cross-icon"></i>
+    </div>
+
+    <div class="saidbar-menu">
+        <ul>
+            <li><a href="index.html">home <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="index.html">genoa sass demo</a></li>
+                    <li><a href="index.html">genoa sass demo-1</a></li>
+                    <li><a href="index.html">genoa sass demo-2</a></li>
+                    <li><a href="index.html">genoa sass demo-3</a></li>
+                    <li><a href="index.html">genoa sass demo-4</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">shop <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="#">checkout</a></li>
+                    <li><a href="login.html">my account</a></li>
+                    <li><a href="cart.html">carts</a></li>
+                    <li><a href="shop.html">products</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">blog <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="blog.html">sidebar-right</a></li>
+                    <li><a href="blog.html">nosidebar</a></li>
+                    <li><a href="blog.html">sidebar-left</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </div>
+
+    <!-- saidbar contact starts-->
+
+    <div class="saidbar-contact">
+        <h2>Contact Info</h2>
+    
+        <p><i class="fas fa-map-marker-alt"></i>Baku , Azerbaijan. 28 May , Bulbul ave 77.</p>
+        <p><i class="far fa-clock"></i>All days of the week</p>
+        <p><i class="fas fa-phone-alt"></i>+012 345 67 89</p>
+        <p><i class="fas fa-rocket"></i>redactor@genoa.com</p>
+        <p><i class="fab fa-skype"></i>lovegenoa</p>
+    </div>
+    
+    <!-- saidbar contact ends-->
+</div>
+    
+<!-- saidbar section ends -->
+
+
+<!-- header-section starts -->
+
+<div class="shop-header-section">
+    <div class="container">
+        <div class="header-section">
+            <div class="header-logo">
+                <a href="index.html"><img src="img/logo.png"></a>
+            </div>
+        
+            <div class="header-right">
+                <div class="header-menu">
+                    <ul>
+                        <li><a href="index.html">home</a>
+                            <ul>
+                                <li><a href="index.html">genoa sass demo</a></li>
+                                <li><a href="index.html">genoa sass demo-1</a></li>
+                                <li><a href="index.html">genoa sass demo-2</a></li>
+                                <li><a href="index.html">genoa sass demo-3</a></li>
+                                <li><a href="index.html">genoa sass demo-4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html">shop</a>
+                            <ul>
+                                <li><a href="#">checkout</a></li>
+                                <li><a href="login.html">my account</a></li>
+                                <li><a href="cart.html">carts</a></li>
+                                <li><a href="shop.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">blog</a>
+                            <ul>
+                                <li><a href="blog.html">sidebar-right</a></li>
+                                <li><a href="blog.html">nosidebar</a></li>
+                                <li><a href="blog.html">sidebar-left</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+        
+                <div class="header-icon">
+                    <i class="fa fa-search" id="search-icon"></i>
+                    <a href="cart.html"><i class="fas fa-cart-arrow-down"></i> <span class="count">0</span></a>
+                    <i class="fas fa-sliders-h" id="menubar-icon"></i>
+                </div>
+                <button class="header-btn">download</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- header-section ends -->
+
+<!-- search section starts -->
+
+<div class="search">
+    <i class="fa fa-times" id="searchcross-icon"></i>
+    <div class="search-section">
+        <div class="search-item">
+            <form action="">
+                <input type="search" placeholder="type..."> 
+                <i class="fa fa-search"></i>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- search section ends -->
+
+<!-- product section starts -->
+
+<div class="product-banner-section">
+    <div class="container">
+        <div class="product-banner-item">
+            <h1>shop</h1>
+        </div>
+    </div>
+</div>
+
+<div class="product-section">
+    <div class="container">
+        <div class="product-header">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="product-header-item">
+                        <h2>shop</h2>
+                        <p>Showing 1–9 of 17 resultsDefault sorting</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="product-header-btn">
+                        <button class="product-header-btn">default sorting <i class="fas fa-long-arrow-alt-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-product">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/product-1.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>album</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/product-2.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>beania</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/product-3.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>beania</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/footergallery-1.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>jacket</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/footergallery-2.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>album</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/footergallery-3.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>album</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/footergallery-4.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>album</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/footergallery-5.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>album</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="product-item" onclick="window.location.href='sproduct.html'">
+                        <div class="product-image">
+                            <img src="img/footergallery-6.jpg">
+                            <span class="sale">sale!</span>
+                            <span class="delete-price"><del>$50.00</del></span>
+                        </div>
+                        <div class="product-content">
+                            <h4>hoddis</h4>
+                            <p class="product-price">$40.00</p>
+                            <button class="product-btn">add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- product section ends -->
+
+<!-- footer section starts -->
+
+<div class="footer-section">
+    <div class="footer-section-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="footer-item">
+                        <img src="img/footer-log.png">
+                        <p>Praesent non scelerisque mauris. Nulla luctus sit amet tellus ac consectetur. Duis convallis consequat turpis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="footer-item">
+                        <h2>Hot posts</h2>
+                        <ul>
+                            <li><img src="img/footerhot-1.png"> <p><a href="#">10 reasons to download renoa ?</a> <span>July 11, 2019</span></p></li>
+                            <li><img src="img/footerhot-2.png"> <p><a href="#">how to optimize SEO</a> <span>July 11, 2019</span></p></li>
+                            <li><img src="img/footerhot-3.jpg"> <p><a href="#">why we use illastrations</a> <span>July 11, 2019</span></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <div class="footer-item-meta">
+                        <h2>Meta</h2>
+                        <p><i class="fas fa-caret-right"></i><a href="#">log in</a></p>
+                        <p><i class="fas fa-caret-right"></i><a href="#">entries feed</a></p>
+                        <p><i class="fas fa-caret-right"></i><a href="#">comment feed</a></p>
+                        <p><i class="fas fa-caret-right"></i><a href="#">wordpress.org</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="footer-item">
+                        <h2>Gallery</h2>
+                        <div class="footer-gellary">
+                            <img src="img/footergallery-1.jpg">
+                            <img src="img/footergallery-2.jpg">
+                            <img src="img/footergallery-3.jpg">
+                            <img src="img/footergallery-4.jpg">
+                            <img src="img/footergallery-5.jpg">
+                            <img src="img/footergallery-6.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            <div class="copyright-item">
+                <p>Genoa &copy; Maruf Ahmed</p>
+            </div>
+            <div class="copyright-item">
+                <ul>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">our shop</a></li>
+                    <li><a href="#">about theme</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer section ends -->
+
+
+    <!-- js file -->
+    <script src="assests/bootstrap.min.js"></script>
+    <script src="min.js"></script>
+</body>
+</html>

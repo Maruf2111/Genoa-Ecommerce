@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assests/all.min.css">
+    <link rel="stylesheet" href="assests/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>blog-page</title>
+    <style>
+
+.shop-header-section{
+    background-color: #ffff;
+     color: gray;
+}
+.shop-header-section ul li a{
+    color: gray;
+}
+.header-icon i{
+    color: gray;
+}
+.blog-banner-section{
+    background-image: url(img/shop-banner-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    position: relative;
+}
+.blog-banner-section::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(90deg, rgba(138, 88, 202, 0.85) 0%, rgba(130, 83, 249, 0.85) 100%, #6929b900 100%);
+    opacity: .9;
+    z-index: -1;
+}
+.blog-banner-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 180px 0;
+}
+.blog-banner-item h1 {
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+
+/* blog style */
+
+.blog-section {
+    background: #F6F5FB;
+    padding: 100px 0;
+}
+.blog-item {
+    background: #ffff;
+    margin: 50px 0;
+    padding: 70px;
+    border-radius: 20px;
+}
+.blog-item img {
+    width: 100%;
+}
+
+.blog-content {
+    padding-top: 40px;
+}
+.blog-item h1 {
+    font-size: 33px;
+    font-weight: 700;
+    color: #383636;
+    cursor: pointer;
+    transition: .3s;
+    padding-bottom: 15px;
+}
+.blog-item h1:hover {
+    color: #FF7542;
+}
+span.blog-link i {
+    margin-left: 5px;
+    font-size: 16px;
+    color: gray;
+    transition: .3s;
+}
+span.blog-link i:hover {
+    color: #ff7542;
+}
+span.blog-link a {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: gray;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: .3s;
+}
+span.blog-link a:hover {
+    color: #ff7542;
+}
+.blog-item p {
+    font-size: 16px;
+    color: gray;
+    padding-top: 25px;
+}
+button.blog-btn {
+    padding: 10px 30px;
+    background: #FF7542;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    color: #ffff;
+    font-weight: 500;
+    box-shadow: 0 10px 10px #FFDFDF;
+    border-radius: 25px;
+    opacity: .9;
+    transition: .3s;
+    margin-top: 20px;
+}
+button.blog-btn i{
+    font-size: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
+button.blog-btn:hover i{
+    padding-left: 5px;
+    visibility: visible;
+    opacity: 1;
+}
+button.blog-btn:hover {
+    opacity: 1;
+    box-shadow: none;
+}
+
+    </style>
+</head>
+<body>
+    
+<!-- saidbar section starts -->
+
+<div class="saidbar">
+    <div class="saidbar-header">
+        <a href="index.html"><img src="img/footer-log.png"></a>
+        <i class="fa fa-times" id="saidbar-cross-icon"></i>
+    </div>
+
+    <div class="saidbar-menu">
+        <ul>
+            <li><a href="index.html">home <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="index.html">genoa sass demo</a></li>
+                    <li><a href="index.html">genoa sass demo-1</a></li>
+                    <li><a href="index.html">genoa sass demo-2</a></li>
+                    <li><a href="index.html">genoa sass demo-3</a></li>
+                    <li><a href="index.html">genoa sass demo-4</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">shop <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="#">checkout</a></li>
+                    <li><a href="login.html">my account</a></li>
+                    <li><a href="cart.html">carts</a></li>
+                    <li><a href="shop.html">products</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">blog <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="blog.html">sidebar-right</a></li>
+                    <li><a href="blog.html">nosidebar</a></li>
+                    <li><a href="blog.html">sidebar-left</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </div>
+
+    <!-- saidbar contact starts-->
+
+    <div class="saidbar-contact">
+        <h2>Contact Info</h2>
+    
+        <p><i class="fas fa-map-marker-alt"></i>Baku , Azerbaijan. 28 May , Bulbul ave 77.</p>
+        <p><i class="far fa-clock"></i>All days of the week</p>
+        <p><i class="fas fa-phone-alt"></i>+012 345 67 89</p>
+        <p><i class="fas fa-rocket"></i>redactor@genoa.com</p>
+        <p><i class="fab fa-skype"></i>lovegenoa</p>
+    </div>
+    
+    <!-- saidbar contact ends-->
+</div>
+    
+<!-- saidbar section ends -->
+
+
+<!-- header-section starts -->
+
+<div class="shop-header-section">
+    <div class="container">
+        <div class="header-section">
+            <div class="header-logo">
+                <a href="index.html"><img src="img/logo.png"></a>
+            </div>
+        
+            <div class="header-right">
+                <div class="header-menu">
+                    <ul>
+                        <li><a href="index.html">home</a>
+                            <ul>
+                                <li><a href="index.html">genoa sass demo</a></li>
+                                <li><a href="index.html">genoa sass demo-1</a></li>
+                                <li><a href="index.html">genoa sass demo-2</a></li>
+                                <li><a href="index.html">genoa sass demo-3</a></li>
+                                <li><a href="index.html">genoa sass demo-4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html">shop</a>
+                            <ul>
+                                <li><a href="#">checkout</a></li>
+                                <li><a href="login.html">my account</a></li>
+                                <li><a href="cart.html">carts</a></li>
+                                <li><a href="shop.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">blog</a>
+                            <ul>
+                                <li><a href="blog.html">sidebar-right</a></li>
+                                <li><a href="blog.html">nosidebar</a></li>
+                                <li><a href="blog.html">sidebar-left</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+        
+                <div class="header-icon">
+                    <i class="fa fa-search" id="search-icon"></i>
+                    <a href="cart.html"><i class="fas fa-cart-arrow-down"></i> <span class="count">0</span></a>
+                    <i class="fas fa-sliders-h" id="menubar-icon"></i>
+                </div>
+                <button class="header-btn">download</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- header-section ends -->
+
+<!-- search section starts -->
+
+<div class="search">
+    <i class="fa fa-times" id="searchcross-icon"></i>
+    <div class="search-section">
+        <div class="search-item">
+            <form action="">
+                <input type="search" placeholder="type..."> 
+                <i class="fa fa-search"></i>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- search section ends -->
+
+<!-- blogbanner section starts -->
+
+<div class="blog-banner-section">
+    <div class="container">
+        <div class="blog-banner-item">
+            <h1>blog</h1>
+        </div>
+    </div>
+</div>
+
+<!-- blogbanner section ends -->
+
+<!-- blog section starts -->
+
+<div class="blog-section">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <h1>Template: Sticky</h1>
+                <span class="blog-link">
+                    <i class="fas fa-user"></i><a href="#">root</a>|
+                    <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                    <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                </span>
+                <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <img src="img/blog-1.png">
+                <div class="blog-content">
+                    <h1>10 reasons to download Genoa ?</h1>
+                    <span class="blog-link">
+                        <i class="fas fa-user"></i><a href="#">root</a>|
+                        <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                        <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                    </span>
+                    <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                    <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <img src="img/blog-2.png">
+                <div class="blog-content">
+                    <h1>How to optimize SEO ?</h1>
+                    <span class="blog-link">
+                        <i class="fas fa-user"></i><a href="#">root</a>|
+                        <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                        <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                    </span>
+                    <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                    <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <img src="img/blog-3.jpg">
+                <div class="blog-content">
+                    <h1>Why we use illustrations</h1>
+                    <span class="blog-link">
+                        <i class="fas fa-user"></i><a href="#">root</a>|
+                        <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                        <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                    </span>
+                    <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                    <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <h1>Hello world!</h1>
+                <span class="blog-link">
+                    <i class="fas fa-user"></i><a href="#">root</a>|
+                    <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                    <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                </span>
+                <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <h1>Block: Image</h1>
+                <span class="blog-link">
+                    <i class="fas fa-user"></i><a href="#">root</a>|
+                    <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                    <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                </span>
+                <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <h1>Block: Button</h1>
+                <span class="blog-link">
+                    <i class="fas fa-user"></i><a href="#">root</a>|
+                    <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                    <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                </span>
+                <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <h1>Block: Cover</h1>
+                <span class="blog-link">
+                    <i class="fas fa-user"></i><a href="#">root</a>|
+                    <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                    <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                </span>
+                <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <h1>Block: Columns</h1>
+                <span class="blog-link">
+                    <i class="fas fa-user"></i><a href="#">root</a>|
+                    <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                    <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                </span>
+                <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <h1>Block: Gallery</h1>
+                <span class="blog-link">
+                    <i class="fas fa-user"></i><a href="#">root</a>|
+                    <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                    <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                </span>
+                <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="blog-item">
+                <h1>Block: Quote</h1>
+                <span class="blog-link">
+                    <i class="fas fa-user"></i><a href="#">root</a>|
+                    <i class="far fa-calendar-alt"></i></i><a href="#">January 7, 2012</a>|
+                    <i class="fas fa-comments"></i><a href="#">Comments Disabled</a>
+                </span>
+                <p>This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky class if you are using the post_class() function to generate your post classes, which is a best practice. They should show at the […]</p>
+                <button class="blog-btn">read more <i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- blog section ends -->
+
+<!-- footer section starts -->
+
+    <div class="footer-section">
+        <div class="footer-section-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="footer-item">
+                            <img src="img/footer-log.png">
+                            <p>Praesent non scelerisque mauris. Nulla luctus sit amet tellus ac consectetur. Duis convallis consequat turpis.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="footer-item">
+                            <h2>Hot posts</h2>
+                            <ul>
+                                <li><img src="img/footerhot-1.png"> <p><a href="#">10 reasons to download renoa ?</a> <span>July 11, 2019</span></p></li>
+                                <li><img src="img/footerhot-2.png"> <p><a href="#">how to optimize SEO</a> <span>July 11, 2019</span></p></li>
+                                <li><img src="img/footerhot-3.jpg"> <p><a href="#">why we use illastrations</a> <span>July 11, 2019</span></p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-12">
+                        <div class="footer-item-meta">
+                            <h2>Meta</h2>
+                            <p><i class="fas fa-caret-right"></i><a href="#">log in</a></p>
+                            <p><i class="fas fa-caret-right"></i><a href="#">entries feed</a></p>
+                            <p><i class="fas fa-caret-right"></i><a href="#">comment feed</a></p>
+                            <p><i class="fas fa-caret-right"></i><a href="#">wordpress.org</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="footer-item">
+                            <h2>Gallery</h2>
+                            <div class="footer-gellary">
+                                <img src="img/footergallery-1.jpg">
+                                <img src="img/footergallery-2.jpg">
+                                <img src="img/footergallery-3.jpg">
+                                <img src="img/footergallery-4.jpg">
+                                <img src="img/footergallery-5.jpg">
+                                <img src="img/footergallery-6.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="copyright">
+                <div class="copyright-item">
+                    <p>Genoa &copy; Maruf Ahmed</p>
+                </div>
+                <div class="copyright-item">
+                    <ul>
+                        <li><a href="#">news</a></li>
+                        <li><a href="#">our shop</a></li>
+                        <li><a href="#">about theme</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- footer section ends -->
+    
+    
+        <!-- js file -->
+        <script src="assests/bootstrap.min.js"></script>
+        <script src="min.js"></script>
+
+</body>
+</html>

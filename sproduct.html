@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assests/all.min.css">
+    <link rel="stylesheet" href="assests/bootstrap.min.css">
+    <link rel="stylesheet" href="assests/magnify.css">
+    <link rel="stylesheet" href="style.css">
+    <title>single-product-page</title>
+    <style>
+
+.shop-header-section{
+    background-color: #ffff;
+    color: gray;
+}
+.shop-header-section ul li a{
+    color: gray;
+}
+.header-icon i{
+    color: gray;
+}
+.product-banner-section{
+    background-image: url(img/shop-banner-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    position: relative;
+}
+.product-banner-section::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(90deg, rgba(138, 88, 202, 0.85) 0%, rgba(130, 83, 249, 0.85) 100%, #6929b900 100%);
+    opacity: .9;
+    z-index: -1;
+}
+.product-banner-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 180px 0;
+}
+.product-banner-item h1 {
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+/* sproduct section */
+
+.sproduct-section {
+    background: #F6F5FB;
+    padding: 100px 0;
+}
+.sproduct-section .container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+.sproduct-image img {
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+}
+.sproduct-image {
+    position: relative;
+    border-radius: 20px;
+}
+i#sproduct-search {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 10px;
+    border-radius: 50%;
+    background: #fff;
+    color: #2d7b99;
+}
+.sproduct-content {
+    padding: 20px;
+}
+.sproduct-content h1 {
+    font-size: 40px;
+    color: #30353D;
+    text-transform: capitalize;
+    padding-bottom: 20px;
+}
+.sproduct-content .price {
+    color: #7EA96C;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.sproduct-content p {
+    color: #66698d;
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+.sproduct-content input[type="number"] {
+    width: 50px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border: 1px solid #504a4a;
+    border-radius: 10px;
+    text-align: center;
+}
+button.sproduct-btn {
+    padding: 8px 30px;
+    border: none;
+    outline: none;
+    margin-left: 15px;
+    box-shadow: 0 10px 10px #FFCFBC;
+    background: #FF7542;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 500;
+    opacity: .9;
+    transition: .3s;
+}
+button.sproduct-btn:hover {
+    box-shadow: none;
+    opacity: 1;
+}
+.sproduct-category {
+    margin-top: 70px;
+}
+.sproduct-category p {
+    padding: 15px 0;
+    border-bottom: 1px solid #dfd9d9;
+    border-top: 1px solid #dfd9d9;
+    margin: 0;
+}
+.sproduct-category p a {
+    color: gray;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding-left: 10px;
+    transition: .3s;
+}
+.sproduct-category p a:hover {
+    color: #ff8355;
+}
+.sproduct-review-header {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #dfd9d9;
+}
+.sproduct-review {
+    padding-top: 100px;
+}
+.sproduct-review-header button {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 10px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: gray;
+}
+.sproduct-describe h2 {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.sproduct-describe p {
+    font-size: 16px;
+    color: #817c7c;
+    margin-top: 50px;
+}
+.sproduct-describe {
+    padding: 50px;
+}
+.sproduct-review-2 {
+    padding: 50px;
+    display: none;
+}
+.sproduct-review-header-2 h2 {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.sproduct-review-header-2 p {
+    font-size: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #dfd9d9;
+}
+.sproduct-review-2 h2 {
+    padding-top: 20px;
+}
+.sproduct-review-2 p {
+    color: gray;
+    padding-top: 10px;
+}
+.sproduct-rating p {
+    font-weight: 300;
+    font-style: italic;
+    margin: 0;
+}
+.sproduct-rating i {
+    color: gray;
+    font-size: 14px;
+}
+.sproduct-review-2 form label {
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+.sproduct-review-2 form {
+    padding-top: 50px;
+}
+.sproduct-review-2 form input, textarea {
+    width: 100%;
+    border: 1px solid #dfd9d9;
+    outline: none;
+    padding: 10px;
+}
+
+.sproduct-review-2 form input:focus, textarea:focus {
+    border: 1px solid #e79025;
+}
+input#check {
+    width: 17px;
+    margin-top: 30px;
+}
+.sproduct-review-2 input[type="submit"] {
+    padding: 8px 30px;
+    border: none;
+    outline: none;
+    background: #FF7542;
+    box-shadow: 0 10px 10px #FFD5C5;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    opacity: .8;
+    margin-top: 20px;
+    transition: .3s;
+}
+.sproduct-review-2 input[type="submit"]:hover {
+    opacity: 1;
+    box-shadow: none;
+}
+
+
+/* related product */
+
+.related-image img {
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.related-item {
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #e6e8ed;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.related-image {
+    position: relative;
+}
+span.sale {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 14px;
+    background: #00A3FF;
+    border-radius: 20px;
+    cursor: pointer;
+}
+span.delete-price {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    color: #ffff;
+    font-size: 14px;
+    background: #E5423F;
+    border-radius: 20px;
+    opacity: .5;
+    cursor: pointer;
+    transition: .3s;
+}
+span.delete-price:hover {
+    opacity: 1;
+}
+.related-content h4 {
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: #30353D;
+}
+p.related-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #8AB07B;
+}
+button.related-btn {
+    padding: 8px 30px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: #FF7542;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px #FBDCD3;
+    opacity: .8;
+    transition: .3s;
+}
+button.related-btn:hover {
+    opacity: 1;
+    box-shadow: none;
+}
+.related-content {
+    padding: 30px;
+    transition: .3s;
+}
+.related-content:hover {
+    background: #F8FAFF;
+}
+    </style>
+</head>
+<body>
+    
+<!-- saidbar section starts -->
+
+<div class="saidbar">
+    <div class="saidbar-header">
+        <a href="index.html"><img src="img/footer-log.png"></a>
+        <i class="fa fa-times" id="saidbar-cross-icon"></i>
+    </div>
+
+    <div class="saidbar-menu">
+        <ul>
+            <li><a href="index.html">home <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="index.html">genoa sass demo</a></li>
+                    <li><a href="index.html">genoa sass demo-1</a></li>
+                    <li><a href="index.html">genoa sass demo-2</a></li>
+                    <li><a href="index.html">genoa sass demo-3</a></li>
+                    <li><a href="index.html">genoa sass demo-4</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">shop <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="#">checkout</a></li>
+                    <li><a href="login.html">my account</a></li>
+                    <li><a href="cart.html">carts</a></li>
+                    <li><a href="shop.html">products</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">blog <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="blog.html">sidebar-right</a></li>
+                    <li><a href="blog.html">nosidebar</a></li>
+                    <li><a href="blog.html">sidebar-left</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </div>
+
+    <!-- saidbar contact starts-->
+
+    <div class="saidbar-contact">
+        <h2>Contact Info</h2>
+    
+        <p><i class="fas fa-map-marker-alt"></i>Baku , Azerbaijan. 28 May , Bulbul ave 77.</p>
+        <p><i class="far fa-clock"></i>All days of the week</p>
+        <p><i class="fas fa-phone-alt"></i>+012 345 67 89</p>
+        <p><i class="fas fa-rocket"></i>redactor@genoa.com</p>
+        <p><i class="fab fa-skype"></i>lovegenoa</p>
+    </div>
+    
+    <!-- saidbar contact ends-->
+</div>
+    
+<!-- saidbar section ends -->
+
+
+<!-- header-section starts -->
+
+<div class="shop-header-section">
+    <div class="container">
+        <div class="header-section">
+            <div class="header-logo">
+                <a href="index.html"><img src="img/logo.png"></a>
+            </div>
+        
+            <div class="header-right">
+                <div class="header-menu">
+                    <ul>
+                        <li><a href="index.html">home</a>
+                            <ul>
+                                <li><a href="index.html">genoa sass demo</a></li>
+                                <li><a href="index.html">genoa sass demo-1</a></li>
+                                <li><a href="index.html">genoa sass demo-2</a></li>
+                                <li><a href="index.html">genoa sass demo-3</a></li>
+                                <li><a href="index.html">genoa sass demo-4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html">shop</a>
+                            <ul>
+                                <li><a href="#">checkout</a></li>
+                                <li><a href="login.html">my account</a></li>
+                                <li><a href="cart.html">carts</a></li>
+                                <li><a href="shop.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">blog</a>
+                            <ul>
+                                <li><a href="blog.html">sidebar-right</a></li>
+                                <li><a href="blog.html">nosidebar</a></li>
+                                <li><a href="blog.html">sidebar-left</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+        
+                <div class="header-icon">
+                    <i class="fa fa-search" id="search-icon"></i>
+                    <a href="cart.html"><i class="fas fa-cart-arrow-down"></i> <span class="count">0</span></a>
+                    <i class="fas fa-sliders-h" id="menubar-icon"></i>
+                </div>
+                <button class="header-btn">download</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- header-section ends -->
+
+<!-- search section starts -->
+
+<div class="search">
+    <i class="fa fa-times" id="searchcross-icon"></i>
+    <div class="search-section">
+        <div class="search-item">
+            <form action="">
+                <input type="search" placeholder="type..."> 
+                <i class="fa fa-search"></i>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- search section ends -->
+
+<!-- productbanner section starts -->
+
+<div class="product-banner-section">
+    <div class="container">
+        <div class="product-banner-item">
+            <h1>shop</h1>
+        </div>
+    </div>
+</div>
+
+<!-- productbanner section ends -->
+
+<!-- single product section starts -->
+
+<div class="sproduct-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="sproduct-image">
+                    <a href="img/product-1.jpg"><img src="img/product-1.jpg" class="zoom"></a>
+                    <!-- <i class="fa fa-search" id="sproduct-search"></i> -->
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="sproduct-content">
+                    <h1>Album</h1>
+                    <h2 class="price">$15.00</h2>
+                    <p>This is a simple, virtual product.</p>
+                    <input type="number" value="1">
+                    <button class="sproduct-btn">add to cart</button>
+                    <div class="sproduct-category">
+                        <p>SKW: <a href="#">woo-album</a></p>
+                        <p>category: <a href="#">music</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sproduct-review">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sproduct-review-header">
+                        <button class="describe-btn">Description</button>
+                        <button class="review-btn">Reviews <span class="review-count">(0)</span></button>
+                    </div>
+                </div>
+
+                <div class="sproduct-describe">
+                    <div class="col-lg-12">
+                        <h2>Description</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis unde voluptatibus, quia modi sint enim quasi quibusdam sapiente ex, ea nemo ullam sit similique pariatur obcaecati. Asperiores aliquid aperiam quam saepe adipisci eveniet architecto laboriosam in quisquam velit aliquam numquam ullam aspernatur error illum, quaerat ad. Vel ipsam quidem, incidunt laudantium sequi placeat eum architecto ex pariatur sed dignissimos voluptatibus vero cupiditate nihil totam dolor tempore sint! Delectus nobis numquam temporibus enim nulla voluptatem id ratione, tenetur mollitia magni laborum, eos provident earum natus at velit unde adipisci recusandae et a voluptas. Eum possimus veniam ipsam ullam perferendis a et voluptatem! Fugit, ullam consequatur? Nihil delectus maiores, obcaecati velit minus ad ex laborum debitis hic architecto earum libero pariatur sint aliquam corrupti tempore ea eligendi adipisci quibusdam mollitia! Tempore totam vitae minima ex culpa dicta libero, suscipit sed architecto non, pariatur aspernatur dolorum necessitatibus eveniet animi nisi illo ad nesciunt enim aliquid fugit amet facere, cupiditate perspiciatis. Perspiciatis eveniet magnam ut modi quos nostrum numquam tempora illo voluptate, quasi dolores ullam facilis. Magnam quis ad assumenda consequatur modi ea reprehenderit neque iure ullam deserunt. Aspernatur voluptatibus placeat blanditiis facilis illo, id non iste quaerat minus ipsa veniam accusantium sapiente modi.</p>
+                    </div>
+                </div>
+
+                <div class="sproduct-review-2">
+                    <div class="col-lg-12">
+                        <div class="sproduct-review-header-2">
+                            <h2>Reviews</h2>
+                            <p>There are no reviews yet.</p>
+                        </div>
+                        <h2>Be the first to review “Album”</h2>
+                        <p>Your email address will not be published. Required fields are marked *</p>
+                        <div class="sproduct-rating">
+                            <p><emp>Your rating</emp></p>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <form action="">
+                            <label for="review">Your review *</label> <br>
+                            <textarea name="" id="reviw" cols="30" rows="3"></textarea> <br>
+                            <label for="name">Name *</label> <br>
+                            <input type="text" id="name"> <br>
+                            <label for="email">Email *</label> <br>
+                            <input type="email" id="name"> <br>
+                            <input type="checkbox" id="check">
+                            <label for="check">Save my name, email, and website in this browser for the next time I comment.</label>
+                        </form>
+                        <input type="submit" value="submit">
+                    </div>
+                </div>
+
+
+                <div class="related-product">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="related-item" onclick="window.location.href='sproduct.html'">
+                                <div class="related-image">
+                                    <img src="img/product-1.jpg">
+                                    <span class="sale">sale!</span>
+                                    <span class="delete-price"><del>$50.00</del></span>
+                                </div>
+                                <div class="related-content">
+                                    <h4>album</h4>
+                                    <p class="related-price">$40.00</p>
+                                    <button class="related-btn">add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="related-item" onclick="window.location.href='sproduct.html'">
+                                <div class="related-image">
+                                    <img src="img/product-2.jpg">
+                                    <span class="sale">sale!</span>
+                                    <span class="delete-price"><del>$50.00</del></span>
+                                </div>
+                                <div class="related-content">
+                                    <h4>beania</h4>
+                                    <p class="related-price">$40.00</p>
+                                    <button class="related-btn">add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="related-item" onclick="window.location.href='sproduct.html'">
+                                <div class="related-image">
+                                    <img src="img/product-3.jpg">
+                                    <span class="sale">sale!</span>
+                                    <span class="delete-price"><del>$50.00</del></span>
+                                </div>
+                                <div class="related-content">
+                                    <h4>beania</h4>
+                                    <p class="related-price">$40.00</p>
+                                    <button class="related-btn">add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- single product section ends -->
+
+<!-- footer section starts -->
+
+<div class="footer-section">
+        <div class="footer-section-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="footer-item">
+                            <img src="img/footer-log.png">
+                            <p>Praesent non scelerisque mauris. Nulla luctus sit amet tellus ac consectetur. Duis convallis consequat turpis.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="footer-item">
+                            <h2>Hot posts</h2>
+                            <ul>
+                                <li><img src="img/footerhot-1.png"> <p><a href="#">10 reasons to download renoa ?</a> <span>July 11, 2019</span></p></li>
+                                <li><img src="img/footerhot-2.png"> <p><a href="#">how to optimize SEO</a> <span>July 11, 2019</span></p></li>
+                                <li><img src="img/footerhot-3.jpg"> <p><a href="#">why we use illastrations</a> <span>July 11, 2019</span></p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-12">
+                        <div class="footer-item-meta">
+                            <h2>Meta</h2>
+                            <p><i class="fas fa-caret-right"></i><a href="#">log in</a></p>
+                            <p><i class="fas fa-caret-right"></i><a href="#">entries feed</a></p>
+                            <p><i class="fas fa-caret-right"></i><a href="#">comment feed</a></p>
+                            <p><i class="fas fa-caret-right"></i><a href="#">wordpress.org</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="footer-item">
+                            <h2>Gallery</h2>
+                            <div class="footer-gellary">
+                                <img src="img/footergallery-1.jpg">
+                                <img src="img/footergallery-2.jpg">
+                                <img src="img/footergallery-3.jpg">
+                                <img src="img/footergallery-4.jpg">
+                                <img src="img/footergallery-5.jpg">
+                                <img src="img/footergallery-6.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="copyright">
+                <div class="copyright-item">
+                    <p>Genoa &copy; Maruf Ahmed</p>
+                </div>
+                <div class="copyright-item">
+                    <ul>
+                        <li><a href="#">news</a></li>
+                        <li><a href="#">our shop</a></li>
+                        <li><a href="#">about theme</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+    
+<!-- footer section ends -->
+    
+    
+        <!-- js file -->
+        <script src="assests/jquery-3.6.0.min.js"></script>
+        <script src="assests/jquery.magnify.js"></script>
+        <script src="assests/bootstrap.min.js"></script>
+        <script src="min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+              $('.zoom').magnify();
+            });
+        </script>
+
+
+</body>
+</html>

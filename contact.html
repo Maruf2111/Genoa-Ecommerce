@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assests/all.min.css">
+    <link rel="stylesheet" href="assests/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>contact page</title>
+
+    <style>
+
+.shop-header-section{
+    background-color: #ffff;
+    color: gray;
+}
+.shop-header-section ul li a{
+    color: gray;
+}
+.header-icon i{
+    color: gray;
+}
+.product-banner-section{
+    background-image: url(img/shop-banner-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    position: relative;
+}
+.product-banner-section::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(90deg, rgba(138, 88, 202, 0.85) 0%, rgba(130, 83, 249, 0.85) 100%, #6929b900 100%);
+    opacity: .9;
+    z-index: -1;
+}
+.product-banner-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 180px 0;
+}
+.product-banner-item h1 {
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #fff;
+}
+.contact-section {
+    background: #F6F5FB;
+    padding: 70px 0;
+}
+.contact-section .container {
+    background: #ffff;
+    border-radius: 10px;
+    padding: 50px;
+}
+.contact-header-item h1 {
+    font-size: 30px;
+    text-transform: capitalize;
+    color: #565151;
+    font-weight: 900;
+}
+.contact-header-item p {
+    font-size: 16px;
+    color: gray;
+}
+.contact-header-item {
+    padding-bottom: 20px;
+}
+.contact-item{
+    margin-top: 20px;
+}
+.contact-item iframe {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #b3cfdd;
+    padding: 20px;
+}
+.contact-item input[type="text"], input[type="email"], input[type="submit"]{
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: gray;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px #d4e2e9;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+.contact-item textarea{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #d4e2e9;
+    margin: 5px 0;
+    padding: 10px 20px;
+    width: 100%;
+}
+.contact-item input[type="submit"]{
+    width: 250px;
+    background-color: #fff;
+    transition: .3s;
+}
+.contact-item input[type="submit"]:hover{
+    background-color: transparent;
+}
+    </style>
+
+</head>
+<body>
+
+<!-- saidbar section starts -->
+
+<div class="saidbar">
+    <div class="saidbar-header">
+        <a href="index.html"><img src="img/footer-log.png"></a>
+        <i class="fa fa-times" id="saidbar-cross-icon"></i>
+    </div>
+
+    <div class="saidbar-menu">
+        <ul>
+            <li><a href="index.html">home <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="index.html">genoa sass demo</a></li>
+                    <li><a href="index.html">genoa sass demo-1</a></li>
+                    <li><a href="index.html">genoa sass demo-2</a></li>
+                    <li><a href="index.html">genoa sass demo-3</a></li>
+                    <li><a href="index.html">genoa sass demo-4</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">shop <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="#">checkout</a></li>
+                    <li><a href="login.html">my account</a></li>
+                    <li><a href="cart.html">carts</a></li>
+                    <li><a href="shop.html">products</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">blog <i class="fas fa-plus" onclick="plusBtn()" id="plusbtn-1"></i></a>
+                <ul>
+                    <li><a href="blog.html">sidebar-right</a></li>
+                    <li><a href="blog.html">nosidebar</a></li>
+                    <li><a href="blog.html">sidebar-left</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </div>
+
+    <!-- saidbar contact starts-->
+
+    <div class="saidbar-contact">
+        <h2>Contact Info</h2>
+    
+        <p><i class="fas fa-map-marker-alt"></i>Baku , Azerbaijan. 28 May , Bulbul ave 77.</p>
+        <p><i class="far fa-clock"></i>All days of the week</p>
+        <p><i class="fas fa-phone-alt"></i>+012 345 67 89</p>
+        <p><i class="fas fa-rocket"></i>redactor@genoa.com</p>
+        <p><i class="fab fa-skype"></i>lovegenoa</p>
+    </div>
+    
+    <!-- saidbar contact ends-->
+</div>
+    
+<!-- saidbar section ends -->
+
+
+<!-- header-section starts -->
+
+<div class="shop-header-section">
+    <div class="container">
+        <div class="header-section">
+            <div class="header-logo">
+                <a href="index.html"><img src="img/logo.png"></a>
+            </div>
+        
+            <div class="header-right">
+                <div class="header-menu">
+                    <ul>
+                        <li><a href="index.html">home</a>
+                            <ul>
+                                <li><a href="index.html">genoa sass demo</a></li>
+                                <li><a href="index.html">genoa sass demo-1</a></li>
+                                <li><a href="index.html">genoa sass demo-2</a></li>
+                                <li><a href="index.html">genoa sass demo-3</a></li>
+                                <li><a href="index.html">genoa sass demo-4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html">shop</a>
+                            <ul>
+                                <li><a href="#">checkout</a></li>
+                                <li><a href="login.html">my account</a></li>
+                                <li><a href="cart.html">carts</a></li>
+                                <li><a href="shop.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">blog</a>
+                            <ul>
+                                <li><a href="blog.html">sidebar-right</a></li>
+                                <li><a href="blog.html">nosidebar</a></li>
+                                <li><a href="blog.html">sidebar-left</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+        
+                <div class="header-icon">
+                    <i class="fa fa-search" id="search-icon"></i>
+                    <a href="cart.html"><i class="fas fa-cart-arrow-down"></i> <span class="count">0</span></a>
+                    <i class="fas fa-sliders-h" id="menubar-icon"></i>
+                </div>
+                <button class="header-btn">download</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- header-section ends -->
+
+<!-- search section starts -->
+
+<div class="search">
+    <i class="fa fa-times" id="searchcross-icon"></i>
+    <div class="search-section">
+        <div class="search-item">
+            <form action="">
+                <input type="search" placeholder="type..."> 
+                <i class="fa fa-search"></i>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- search section ends -->
+
+<!-- productbanner section starts -->
+
+<div class="product-banner-section">
+    <div class="container">
+        <div class="product-banner-item">
+            <h1>contact</h1>
+        </div>
+    </div>
+</div>
+
+<!-- productbanner section ends -->
+
+<!-- contact section starts -->
+
+<div class="contact-section">
+    <div class="container">
+        <div class="contact-section-item">
+            <div class="contact-header">
+                <div class="row">
+                    <div class="contact-header-item">
+                        <h1>contact us</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Nihil repellat optio distinctio?</p>
+                    </div>
+                </div>
+            </div>
+       
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="contact-item">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.4380636860124!2d90.37154131452122!3d24.74616515592434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37564f7e83cf30d7%3A0xaacb26ca167738b9!2sMymensingh%20City%20Bypass!5e0!3m2!1sbn!2sbd!4v1647610536897!5m2!1sbn!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="contact-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" placeholder="First Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="email" placeholder="Email Address">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="+08801734561356">
+                            </div>
+                        </div>
+                        <p><textarea name="" id="" cols="30" rows="8" placeholder="Comment Here"></textarea></p>
+                        <p><input type="submit" value="Submit"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- contact section ends -->
+
+<!-- footer section starts -->
+
+<div class="footer-section">
+    <div class="footer-section-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="footer-item">
+                        <img src="img/footer-log.png">
+                        <p>Praesent non scelerisque mauris. Nulla luctus sit amet tellus ac consectetur. Duis convallis consequat turpis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="footer-item">
+                        <h2>Hot posts</h2>
+                        <ul>
+                            <li><img src="img/footerhot-1.png"> <p><a href="#">10 reasons to download renoa ?</a> <span>July 11, 2019</span></p></li>
+                            <li><img src="img/footerhot-2.png"> <p><a href="#">how to optimize SEO</a> <span>July 11, 2019</span></p></li>
+                            <li><img src="img/footerhot-3.jpg"> <p><a href="#">why we use illastrations</a> <span>July 11, 2019</span></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <div class="footer-item-meta">
+                        <h2>Meta</h2>
+                        <p><i class="fas fa-caret-right"></i><a href="#">log in</a></p>
+                        <p><i class="fas fa-caret-right"></i><a href="#">entries feed</a></p>
+                        <p><i class="fas fa-caret-right"></i><a href="#">comment feed</a></p>
+                        <p><i class="fas fa-caret-right"></i><a href="#">wordpress.org</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="footer-item">
+                        <h2>Gallery</h2>
+                        <div class="footer-gellary">
+                            <img src="img/footergallery-1.jpg">
+                            <img src="img/footergallery-2.jpg">
+                            <img src="img/footergallery-3.jpg">
+                            <img src="img/footergallery-4.jpg">
+                            <img src="img/footergallery-5.jpg">
+                            <img src="img/footergallery-6.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            <div class="copyright-item">
+                <p>Genoa &copy; Maruf Ahmed</p>
+            </div>
+            <div class="copyright-item">
+                <ul>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">our shop</a></li>
+                    <li><a href="#">about theme</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer section ends -->
+
+
+    <!-- js file -->
+    <script src="assests/bootstrap.min.js"></script>
+    <script src="min.js"></script>
+
+</body>
+</html>
